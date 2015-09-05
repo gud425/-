@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+void main() {
+
+
+	char incode[10];
+	cout << "연습용이니깐 입력해봐" << endl;
+	cin >> incode;
+
+	int a = 0, i, j = 0;
+	for (i = 0; i<10; i++) {
+		if (incode[i] == '\0') {
+			j = i;
+			break;
+		}
+	}
+	cout << j << endl; //임시용 j가몇인지  
+	for (i = 0; i<j; i++)
+		incode[i] = incode[i] ^ (i + j);
+
+
+	cout << incode << "\n--------------" << endl;
+	cout << "복호화 할꺼? (하실꺼면 1번,끝내실것이면2번을눌러주세요)" << endl;
+	cin >> a;
+	if (a == 1)
+	{
+		for (i = 0; i<j; i++)
+			incode[i] = incode[i] ^ (i + j);
+		cout << incode << "\n-------" << endl;
+	}
+
+	system("pause");
+
+}
+//\n->end1l 로바꿈  (가독성)용 
